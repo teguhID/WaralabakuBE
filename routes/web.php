@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('datawaralaba','DataWaralaba');
+Route::resource('datawaralaba','DataWaralaba'); //resource untuk langsung membuat crud url
