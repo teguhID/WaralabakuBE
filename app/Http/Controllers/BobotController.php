@@ -13,8 +13,16 @@ class BobotController extends Controller
         return view('bobot/daftarBobot')->with('data', $data);
     }
 
-    public function create()
+    public function edit($id)
     {
-        return view('bobot/EditBobot');
+        $data = BobotModel::find($id);
+        return view('bobot.EditBobot')->with('data', $data);
     }
+
+    public function update(Request $req, $id)
+    {
+        BobotModel::find($id)->update($req->all());
+        return redirect('bobot');
+    }
+
 }

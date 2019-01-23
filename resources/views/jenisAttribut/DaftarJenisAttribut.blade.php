@@ -1,9 +1,9 @@
 @extends('layout/layout')
 @section('title')
-    Bobot
+    Jenis Attribut
 @endsection
 @section('content')
-<h4>Data Bobot</h4></br></br>
+<h4>Jenis Attribut</h4></br></br>
         <label>modal = </label>
         <label>{{$data->modal}}</label></br>
         <label>gerai = </label>
@@ -15,6 +15,6 @@
         <label>keuntungan = </label>
         <label>{{$data->keuntungan}}</label></br></br>
         
-        <a href="{{ url('/bobot/' . $data->id . '/edit')}}" class="btn btn-success">Edit</a></br></br>  
+        <a href="{{ url('/jenisattribut/' . $data->id . '/edit')}}" class="btn btn-success">Edit</a></br></br>  
 
 @endsection
