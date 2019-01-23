@@ -15,7 +15,7 @@ class Bobot extends Migration
     {
         Schema::create('bobot', function (Blueprint $table) {
             $table->increments('id');
-            $table->double('mdoal', 8, 2)->nullable();
+            $table->double('modal', 8, 2)->nullable();
             $table->double('gerai', 8, 2)->nullable();
             $table->double('bep', 8, 2)->nullable();
             $table->double('fee', 8, 2)->nullable();

@@ -3,7 +3,7 @@
     Data Waralaba
 @endsection
 @section('content')
-
+<h4>Data Waralaba</h4></br></br>
 <a href="{{ url('/datawaralaba/create') }}" class="btn btn-success">Tambah</a></br></br>  
 
     <table class="table table-hover">

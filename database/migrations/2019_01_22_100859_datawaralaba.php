@@ -21,7 +21,7 @@ class Datawaralaba extends Migration
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('web')->nullable();
-            $table->double('mdoal', 8, 2)->nullable();
+            $table->double('modal', 8, 2)->nullable();
             $table->double('gerai', 8, 2)->nullable();
             $table->double('bep', 8, 2)->nullable();
             $table->double('fee', 8, 2)->nullable();

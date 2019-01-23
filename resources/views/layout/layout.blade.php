@@ -17,7 +17,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                   <div class="navbar-nav">
                     <a class="btn btn-outline-primary" href="{{ url('/datawaralaba') }}"> Data Waralaba <span class="sr-only">(current)</span></a>
-                    <a class="btn btn-outline-primary" href="#">Data Bobot</a>
+                    <a class="btn btn-outline-primary" href="{{ url('/bobot') }}">Data Bobot</a>
                     <a class="btn btn-outline-primary" href="#">Data Jenis Attribut</a>
                     <a class="btn btn-outline-primary" href="#">Data Hasil Attribut</a>
                     <a class="btn btn-outline-primary" href="#">Data Preferensi</a>
