@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 
-<a href="{{ url('/datawaralaba/create') }}" class="btn btn-success">Tambah</a></br></br>  
+<a href="{{ url('/datawaralaba/create') }}" class="btn btn-success">Edit</a></br></br>  
 
     <table class="table table-hover">
         <thead>

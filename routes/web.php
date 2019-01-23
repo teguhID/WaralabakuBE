@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
 Route::resource('datawaralaba','DataWaralabaController'); //resource untuk langsung membuat crud url
+Route::resource('databobot','BobotController'); //resource untuk langsung membuat crud url
