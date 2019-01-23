@@ -8,8 +8,15 @@
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
 </head>
 <body>
-    <div class="col-md-6 col-md-offset-3">
-        @yield('content')
-    </div>
+        <div class="row">
+            <div class="col-md-6">
+                <a href="{{ url('/datawaralaba/create') }}" class="btn btn-success">Tambah</a>           
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                @yield('content')
+            </div>
+        </div>
 </body>
 </html>
