@@ -19,7 +19,7 @@
                     <a class="btn btn-outline-primary" href="{{ url('/datawaralaba') }}"> Data Waralaba <span class="sr-only">(current)</span></a>
                     <a class="btn btn-outline-primary" href="{{ url('/bobot') }}">Data Bobot</a>
                     <a class="btn btn-outline-primary" href="{{ url('/jenisattribut') }}">Data Jenis Attribut</a>
-                    <a class="btn btn-outline-primary" href="#">Data Hasil Attribut</a>
+                    <a class="btn btn-outline-primary" href="{{ url('/nilaiattribut') }}">Data Nilai Attribut</a>
                     <a class="btn btn-outline-primary" href="#">Data Preferensi</a>
                     <a class="btn btn-outline-primary" href="#">Data Hasil</a>
                   </div>
