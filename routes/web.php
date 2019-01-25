@@ -19,3 +19,4 @@ Route::resource('datawaralaba','DataWaralabaController'); //resource untuk langs
 Route::resource('bobot','BobotController'); //resource untuk langsung membuat crud url
 Route::resource('jenisattribut','JenisAttributController'); //resource untuk langsung membuat crud url
 Route::resource('nilaiattribut','NilaiAttributController'); //resource untuk langsung membuat crud url
+Route::resource('normalisasi', 'NormalisasiController');
