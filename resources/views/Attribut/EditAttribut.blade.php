@@ -1,11 +1,11 @@
 @extends('layout/layout')
 @section('title')
-Jenis Attribut
+Attribut
 @endsection
 @section('content')
-<h4>Jenis Attribut</h4></br></br>
+<h4>Attribut</h4></br></br>
 <div class="col-md-4">    
-    <form action="{{ url('jenisattribut/' . $data->id) }}" method="POST">
+    <form action="{{ url('attribut/' . $data->id) }}" method="POST">
         {{ method_field('PUT') }}
         {{ csrf_field() }}
 

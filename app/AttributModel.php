@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class JenisAttributModel extends Model
+class AttributModel extends Model
 {
-    protected $table = 'jenisattribut';
+    protected $table = 'attribut';
     protected $fillable = ['modal','gerai','bep','fee','keuntungan'];
 }
