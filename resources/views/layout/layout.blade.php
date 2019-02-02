@@ -19,7 +19,8 @@
                     <a class="btn btn-outline-primary" href="{{ url('/datawaralaba') }}"> Data Waralaba <span class="sr-only">(current)</span></a>
                     <a class="btn btn-outline-primary" href="{{ url('/bobot') }}">Data Bobot</a>
                     <a class="btn btn-outline-primary" href="{{ url('/attribut') }}">Data Attribut</a>
-                    <a class="btn btn-outline-primary" href="{{ url('/nilaiattribut') }}">Data Nilai Attribut</a>
+                    <a class="btn btn-outline-primary" href="{{ url('/nilaikriteria') }}">Data Nilai Kriteria</a>
+                    <a class="btn btn-outline-primary" href="{{ url('/minmaxkriteria') }}">Data Min Max Kriteria</a>
                     <a class="btn btn-outline-primary" href="#">Data Normalisasi</a>
                     <a class="btn btn-outline-primary" href="#">Data Hasil</a>
                   </div>

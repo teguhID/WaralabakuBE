@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Jenisattribut extends Migration
+class Minmaxkriteria extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class Jenisattribut extends Migration
      */
     public function up()
     {
-        Schema::create('jenisattribut', function (Blueprint $table) {
+        Schema::create('minmaxkriteria', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('modal')->nullable();
-            $table->string('gerai')->nullable();
-            $table->string('bep')->nullable();
-            $table->string('fee')->nullable();
-            $table->string('keuntungan')->nullable();
+            $table->string('kriteria')->nullable();
+            $table->integer('min');
+            $table->integer('max');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class Jenisattribut extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jenisattribut');
+        Schema::dropIfExists('minmaxkriteria');
     }
 }

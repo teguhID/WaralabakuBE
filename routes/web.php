@@ -18,5 +18,5 @@ Route::get('/', function () {
 Route::resource('datawaralaba','DataWaralabaController'); //resource untuk langsung membuat crud url
 Route::resource('bobot','BobotController'); //resource untuk langsung membuat crud url
 Route::resource('attribut','AttributController'); //resource untuk langsung membuat crud url
-Route::resource('nilaiattribut','NilaiAttributController'); //resource untuk langsung membuat crud url
-Route::resource('normalisasi', 'NormalisasiController');
+Route::resource('nilaikriteria', 'NilaiKriteriaController');
+Route::resource('minmaxkriteria','MinMaxKriteriaController'); //resource untuk langsung membuat crud url

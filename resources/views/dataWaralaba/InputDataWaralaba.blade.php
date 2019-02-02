@@ -26,7 +26,10 @@
         <label>Perkiraan BEP</label></br>
         <input type="text" name="bep" class="form-control">
         <label>Franchise Fee</label></br>
-        <input type="text" name="fee" class="form-control">
+        <select class="form-control" name="fee">
+            <option>Ada</option>
+            <option>Tidak Ada</option>
+          </select>
         <label>Keuntungan</label></br>
         <input type="text" name="keuntungan" class="form-control">
 

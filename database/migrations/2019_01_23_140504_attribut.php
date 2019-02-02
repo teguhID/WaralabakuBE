@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Nilaiattribut extends Migration
+class Attribut extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class Nilaiattribut extends Migration
      */
     public function up()
     {
-        Schema::create('nilaiattribut', function (Blueprint $table) {
+        Schema::create('jenisattribut', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('modal');
-            $table->integer('gerai');
-            $table->integer('bep');
-            $table->integer('fee');
-            $table->integer('keuntungan');
+            $table->string('modal')->nullable();
+            $table->string('gerai')->nullable();
+            $table->string('bep')->nullable();
+            $table->string('fee')->nullable();
+            $table->string('keuntungan')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class Nilaiattribut extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nilaiattribut');
+        Schema::dropIfExists('jenisattribut');
     }
 }
