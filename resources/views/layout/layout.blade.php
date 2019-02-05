@@ -12,7 +12,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="{{ url('/') }}">Waralabaku</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
@@ -20,7 +20,7 @@
                         <a class="btn btn-outline-primary" href="{{ url('/bobot') }}">Data Bobot</a>
                         <a class="btn btn-outline-primary" href="{{ url('/attribut') }}">Data Attribut</a>
                         <a class="btn btn-outline-primary" href="{{ url('/nilaiutility') }}">Data Nilai Utility</a>
-                        <a class="btn btn-outline-primary" href="#">Data Hasil</a>
+                        <a class="btn btn-outline-primary" href="{{ url('/result') }}">Data Result</a>
                     </div>
                 </div>
         </nav></br>

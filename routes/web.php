@@ -20,3 +20,4 @@ Route::resource('bobot','BobotController'); //resource untuk langsung membuat cr
 Route::resource('attribut','AttributController'); //resource untuk langsung membuat crud url
 Route::resource('nilaiutility', 'NilaiUtilityController');
 Route::get('test', 'DataWaralabaController@dataUtility');
+Route::get('result', 'DataWaralabaController@finalResultView');

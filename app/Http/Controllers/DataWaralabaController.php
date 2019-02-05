@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 use App\AttributModel;
 use App\DataWaralabaModel;
 use App\NilaiUtilityModel;
-
+use App\BobotModel;
 
 class DataWaralabaController extends Controller
 {
+
     public function index() //MENAMPILKAN DATA WARALABA 
     {
         $data = DataWaralabaModel::all();
@@ -44,7 +45,9 @@ class DataWaralabaController extends Controller
                                     'geraiUtility' => 0,
                                     'bepUtility' => 0,
                                     'feeUtility' => 0,
-                                    'keuntunganUtility' => 0,]);
+                                    'keuntunganUtility' => 0,
+                                    'hasil' => 0,
+                                    ]);
 
         // ================================== UPDATE UTILITY VALUE WHEN ATTRIBUT CHANGED ===============================
         $nilaiKriteria = NilaiUtilityModel::all();
@@ -54,12 +57,13 @@ class DataWaralabaController extends Controller
             $resultUtility['bep'] = $this->utility($data->bep, 'bep', 'minBep', 'maxBep');
             $resultUtility['fee'] = $this->utility($data->fee, 'fee', 'minFee', 'maxFee');
             $resultUtility['keuntungan'] = $this->utility($data->keuntungan, 'keuntungan', 'minKeuntungan', 'maxKeuntungan');
-
+            $resultUtility['finalResult'] = $this->finalResult($resultUtility['modal'], $resultUtility['gerai'], $resultUtility['bep'], $resultUtility['fee'], $resultUtility['keuntungan']);
             NilaiUtilityModel::where('id', $data->id)->update(['modalUtility'=>$resultUtility['modal'],
                                                                 'geraiUtility'=>$resultUtility['gerai'],
                                                                 'bepUtility'=>$resultUtility['bep'],
                                                                 'feeUtility'=>$resultUtility['fee'],
                                                                 'keuntunganUtility'=>$resultUtility['keuntungan'],
+                                                                'hasil'=> $resultUtility['finalResult'],
                                                                 ]);
         }
         // ================================== UPDATE UTILITY VALUE WHEN ATTRIBUT CHANGED ===============================
@@ -105,12 +109,13 @@ class DataWaralabaController extends Controller
             $resultUtility['bep'] = $this->utility($data->bep, 'bep', 'minBep', 'maxBep');
             $resultUtility['fee'] = $this->utility($data->fee, 'fee', 'minFee', 'maxFee');
             $resultUtility['keuntungan'] = $this->utility($data->keuntungan, 'keuntungan', 'minKeuntungan', 'maxKeuntungan');
-
+            $resultUtility['finalResult'] = $this->finalResult($resultUtility['modal'], $resultUtility['gerai'], $resultUtility['bep'], $resultUtility['fee'], $resultUtility['keuntungan']);
             NilaiUtilityModel::where('id', $data->id)->update(['modalUtility'=>$resultUtility['modal'],
                                                                 'geraiUtility'=>$resultUtility['gerai'],
                                                                 'bepUtility'=>$resultUtility['bep'],
                                                                 'feeUtility'=>$resultUtility['fee'],
                                                                 'keuntunganUtility'=>$resultUtility['keuntungan'],
+                                                                'hasil'=> $resultUtility['finalResult'],
                                                                 ]);
         }
         // ================================== UPDATE UTILITY VALUE WHEN ATTRIBUT CHANGED ===============================
@@ -129,18 +134,26 @@ class DataWaralabaController extends Controller
             $resultUtility['bep'] = $this->utility($data->bep, 'bep', 'minBep', 'maxBep');
             $resultUtility['fee'] = $this->utility($data->fee, 'fee', 'minFee', 'maxFee');
             $resultUtility['keuntungan'] = $this->utility($data->keuntungan, 'keuntungan', 'minKeuntungan', 'maxKeuntungan');
-
+            $resultUtility['finalResult'] = $this->finalResult($resultUtility['modal'], $resultUtility['gerai'], $resultUtility['bep'], $resultUtility['fee'], $resultUtility['keuntungan']);
             NilaiUtilityModel::where('id', $data->id)->update(['modalUtility'=>$resultUtility['modal'],
                                                                 'geraiUtility'=>$resultUtility['gerai'],
                                                                 'bepUtility'=>$resultUtility['bep'],
                                                                 'feeUtility'=>$resultUtility['fee'],
                                                                 'keuntunganUtility'=>$resultUtility['keuntungan'],
+                                                                'hasil'=> $resultUtility['finalResult'],
                                                                 ]);
         }
         // ================================== UPDATE UTILITY VALUE WHEN ATTRIBUT CHANGED ===============================
         return redirect('datawaralaba');
     }
 
+    public function finalResultView()
+    {
+        $data = NilaiUtilityModel::all();
+        return view('result.DaftarResult')->with('data', $data); //buka file di view
+    }
+
+// =============================================== FORMULA AREA =======================================================================
     public function utility($kriteriaVal, $attributVal, $kriteriaMin, $kriteriaMax) // PARAM 1 = NILAI KRITERIA 
     {                                                                               // PARAM 2 = NAMA ATTRIBUT KRITERIA, EX : 'modal'
         $kriteria['minModal'] = NilaiUtilityModel::min('modal');                    // PARAM 3 = NILAI KRITERIA MIN *
@@ -162,4 +175,20 @@ class DataWaralabaController extends Controller
         return $utilityVal;
     }
 
+    public function finalResult($modalUtl, $geraiUtl, $bepUtl, $feeUtl, $keuntunganUtl) //PARAM 1 = NILAI UTILITY MODAL
+    {                                                                                   //PARAM 2 = NILAI UTILITY GERAI
+        $data = BobotModel::all();                                                      //PARAM 3 = NILAI UTILITY BEP
+        foreach ($data as $norm) {                                                      //PARAM 4 = NILAI UTILITY FEE
+            $dataNorm['modal'] = $norm->modalNorm;                                      //PARAM 5 = NILAI UTILITY KEUNTUNGAN
+            $dataNorm['gerai'] = $norm->geraiNorm;
+            $dataNorm['bep'] = $norm->bepNorm;
+            $dataNorm['fee'] = $norm->feeNorm;
+            $dataNorm['keuntungan'] = $norm->keuntunganNorm;
+            
+            $result = ($modalUtl*$dataNorm['modal']) + ($geraiUtl*$dataNorm['gerai']) + ($bepUtl*$dataNorm['bep']) + ($feeUtl*$dataNorm['fee']) + ($keuntunganUtl*$dataNorm['keuntungan']);
+
+            return $result;
+        }
+    }
+// =============================================== FORMULA AREA =======================================================================
 }

@@ -1,9 +1,9 @@
 @extends('layout/layout')
 @section('title')
-    Data Nilai Kriteria
+    Data Nilai Utility
 @endsection
 @section('content')
-<h4>Data Nilai Kriteria</h4></br></br>
+<h4>Data Nilai Utility</h4></br></br>
 
     <table class="table table-hover">
         <thead>

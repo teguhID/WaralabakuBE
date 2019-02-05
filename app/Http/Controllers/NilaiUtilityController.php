@@ -10,6 +10,6 @@ class NilaiUtilityController extends Controller
     public function index()
     {
         $data['data'] = NilaiUtilityModel::all();
-        return view('nilaiKriteria/daftarNilaiKriteria')->with($data);
+        return view('nilaiUtility/daftarNilaiUtility')->with($data);
     }
 }
