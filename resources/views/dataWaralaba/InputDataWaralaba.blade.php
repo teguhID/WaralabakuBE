@@ -29,7 +29,7 @@
         <select class="form-control" name="fee">
             <option>Ada</option>
             <option>Tidak Ada</option>
-          </select>
+        </select>
         <label>Keuntungan</label></br>
         <input type="text" name="keuntungan" class="form-control">
 

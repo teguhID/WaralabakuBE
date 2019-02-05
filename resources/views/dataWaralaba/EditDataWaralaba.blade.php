@@ -27,7 +27,14 @@
         <label>Perkiraan BEP</label></br>
         <input type="text" name="bep" class="form-control" value="{{ $data->bep }}">
         <label>Franchise Fee</label></br>
-        <input type="text" name="fee" class="form-control" value="{{ $data->fee }}">
+        <select class="form-control" name="fee" id="fee">
+            <option @if($data->fee == 'Ada' || $data->fee == 'ada')
+                {{ 'selected' }}
+            @endif >Ada</option>
+            <option @if($data->fee == 'Tidak Ada' || $data->fee == 'tidak ada')
+                {{ 'selected' }}
+            @endif >Tidak Ada</option>
+        </select>
         <label>Keuntungan</label></br>
         <input type="text" name="keuntungan" class="form-control" value="{{ $data->keuntungan }}">
 

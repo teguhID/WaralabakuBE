@@ -13,7 +13,7 @@ class Nilaikriteria extends Migration
      */
     public function up()
     {
-        Schema::create('nilaikriteria', function (Blueprint $table) {
+        Schema::create('nilaiutility', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama')->nullable();
             $table->integer('modal')->nullable();
@@ -21,6 +21,11 @@ class Nilaikriteria extends Migration
             $table->integer('bep')->nullable();
             $table->integer('fee')->nullable();
             $table->integer('keuntungan')->nullable();
+            $table->double('modalUtility', 4, 2)->nullable();
+            $table->double('geraiUtility', 4, 2)->nullable();
+            $table->double('bepUtility', 4, 2)->nullable();
+            $table->double('feeUtility', 4, 2)->nullable();
+            $table->double('keuntunganUtility', 4, 2)->nullable();
             $table->timestamps();
         });
     }

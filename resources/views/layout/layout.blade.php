@@ -15,15 +15,13 @@
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <div class="navbar-nav">
-                    <a class="btn btn-outline-primary" href="{{ url('/datawaralaba') }}"> Data Waralaba <span class="sr-only">(current)</span></a>
-                    <a class="btn btn-outline-primary" href="{{ url('/bobot') }}">Data Bobot</a>
-                    <a class="btn btn-outline-primary" href="{{ url('/attribut') }}">Data Attribut</a>
-                    <a class="btn btn-outline-primary" href="{{ url('/nilaikriteria') }}">Data Nilai Kriteria</a>
-                    <a class="btn btn-outline-primary" href="{{ url('/minmaxkriteria') }}">Data Min Max Kriteria</a>
-                    <a class="btn btn-outline-primary" href="#">Data Normalisasi</a>
-                    <a class="btn btn-outline-primary" href="#">Data Hasil</a>
-                  </div>
+                    <div class="navbar-nav">
+                        <a class="btn btn-outline-primary" href="{{ url('/datawaralaba') }}"> Data Waralaba <span class="sr-only">(current)</span></a>
+                        <a class="btn btn-outline-primary" href="{{ url('/bobot') }}">Data Bobot</a>
+                        <a class="btn btn-outline-primary" href="{{ url('/attribut') }}">Data Attribut</a>
+                        <a class="btn btn-outline-primary" href="{{ url('/nilaiutility') }}">Data Nilai Utility</a>
+                        <a class="btn btn-outline-primary" href="#">Data Hasil</a>
+                    </div>
                 </div>
         </nav></br>
     

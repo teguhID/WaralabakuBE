@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\NilaiKriteriaModel;
+use App\NilaiUtilityModel;
 
-class NilaiKriteriaController extends Controller
+class NilaiUtilityController extends Controller
 {
     public function index()
     {
-        $data['data'] = NilaiKriteriaModel::all();
+        $data['data'] = NilaiUtilityModel::all();
         return view('nilaiKriteria/daftarNilaiKriteria')->with($data);
     }
 }
