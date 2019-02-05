@@ -46,47 +46,24 @@ class DataWaralabaController extends Controller
                                     'feeUtility' => 0,
                                     'keuntunganUtility' => 0,]);
 
-        $val = $this->minMax();
+        // ================================== UPDATE UTILITY VALUE WHEN ATTRIBUT CHANGED ===============================
         $nilaiKriteria = NilaiUtilityModel::all();
-        foreach ($nilaiKriteria as $datas) {
+        foreach ($nilaiKriteria as $data) {
+            $resultUtility['modal'] = $this->utility($data->modal, 'modal', 'minModal', 'maxModal');
+            $resultUtility['gerai'] = $this->utility($data->gerai, 'gerai', 'minGerai', 'maxGerai');
+            $resultUtility['bep'] = $this->utility($data->bep, 'bep', 'minBep', 'maxBep');
+            $resultUtility['fee'] = $this->utility($data->fee, 'fee', 'minFee', 'maxFee');
+            $resultUtility['keuntungan'] = $this->utility($data->keuntungan, 'keuntungan', 'minKeuntungan', 'maxKeuntungan');
 
-            if (AttributModel::value('modal') == 'benefit') {
-                $modal = ($datas->modal - $val['minModal'])/($val['maxModal']-$val['minModal']);       
-            } else {
-                $modal = ($val['maxModal'] - $datas->modal)/($val['maxModal']-$val['minModal']);
-            }
-
-            if (AttributModel::value('gerai') == 'benefit') {
-                $gerai = ($datas->gerai - $val['minGerai'])/($val['maxGerai']-$val['minGerai']);       
-            } else {
-                $gerai = ($val['maxGerai'] - $datas->gerai)/($val['maxGerai']-$val['minGerai']);
-            }
-
-            if (AttributModel::value('bep') == 'benefit') {
-                $bep = ($datas->bep -  $val['minBep'])/( $val['maxBep']- $val['minBep']);       
-            } else {
-                $bep = ( $val['maxBep'] - $datas->bep)/( $val['maxBep']- $val['minBep']);
-            }
-
-            if (AttributModel::value('fee') == 'benefit') {
-                $fee = ($datas->fee - $val['minFee'])/($val['maxFee']-$val['minFee']);       
-            } else {
-                $fee = ($val['maxFee'] - $datas->fee)/($val['maxFee']-$val['minFee']);
-            }
-
-            if (AttributModel::value('keuntungan') == 'benefit') {
-                $keuntungan = ($datas->keuntungan - $val['minKeuntungan'])/($val['maxKeuntungan']-$val['minKeuntungan']);       
-            } else {
-                $keuntungan = ($val['maxKeuntungan'] - $datas->keuntungan)/($val['maxKeuntungan']-$val['minKeuntungan']);
-            }
-
-            NilaiUtilityModel::where('id', $datas->id)->update(['modalUtility'=>$modal,
-                                                                'geraiUtility'=>$gerai,
-                                                                'bepUtility'=>$bep,
-                                                                'feeUtility'=>$fee,
-                                                                'keuntunganUtility'=>$keuntungan,
-            ]);
+            NilaiUtilityModel::where('id', $data->id)->update(['modalUtility'=>$resultUtility['modal'],
+                                                                'geraiUtility'=>$resultUtility['gerai'],
+                                                                'bepUtility'=>$resultUtility['bep'],
+                                                                'feeUtility'=>$resultUtility['fee'],
+                                                                'keuntunganUtility'=>$resultUtility['keuntungan'],
+                                                                ]);
         }
+        // ================================== UPDATE UTILITY VALUE WHEN ATTRIBUT CHANGED ===============================
+
         return redirect('datawaralaba'); 
     }
 
@@ -113,120 +90,76 @@ class DataWaralabaController extends Controller
         else {
             $fee = 2;
         }
-        // ========== input ke nilai kriteria ==========   
+        // ==================== AUTOMATICALLY UPDATE NILAI KRITERIA KETIKA DATA WARALABA DI UPDATE =====================   
         NilaiUtilityModel::where('idDW', $id)->update(['nama' => request('nama'),
                                     'modal' => request('modal'),
                                     'gerai' => request('gerai'),
                                     'bep' => request('bep'),
                                     'fee' => $fee,
                                     'keuntungan' => request('keuntungan'),]);
-
-        $val = $this->minMax();
+        // ================================== UPDATE UTILITY VALUE WHEN ATTRIBUT CHANGED ===============================
         $nilaiKriteria = NilaiUtilityModel::all();
-        foreach ($nilaiKriteria as $datas) {
+        foreach ($nilaiKriteria as $data) {
+            $resultUtility['modal'] = $this->utility($data->modal, 'modal', 'minModal', 'maxModal');
+            $resultUtility['gerai'] = $this->utility($data->gerai, 'gerai', 'minGerai', 'maxGerai');
+            $resultUtility['bep'] = $this->utility($data->bep, 'bep', 'minBep', 'maxBep');
+            $resultUtility['fee'] = $this->utility($data->fee, 'fee', 'minFee', 'maxFee');
+            $resultUtility['keuntungan'] = $this->utility($data->keuntungan, 'keuntungan', 'minKeuntungan', 'maxKeuntungan');
 
-            if (AttributModel::value('modal') == 'benefit') {
-                $modal = ($datas->modal - $val['minModal'])/($val['maxModal']-$val['minModal']);       
-            } else {
-                $modal = ($val['maxModal'] - $datas->modal)/($val['maxModal']-$val['minModal']);
-            }
-
-            if (AttributModel::value('gerai') == 'benefit') {
-                $gerai = ($datas->gerai - $val['minGerai'])/($val['maxGerai']-$val['minGerai']);       
-            } else {
-                $gerai = ($val['maxGerai'] - $datas->gerai)/($val['maxGerai']-$val['minGerai']);
-            }
-
-            if (AttributModel::value('bep') == 'benefit') {
-                $bep = ($datas->bep -  $val['minBep'])/( $val['maxBep']- $val['minBep']);       
-            } else {
-                $bep = ( $val['maxBep'] - $datas->bep)/( $val['maxBep']- $val['minBep']);
-            }
-
-            if (AttributModel::value('fee') == 'benefit') {
-                $fee = ($datas->fee - $val['minFee'])/($val['maxFee']-$val['minFee']);       
-            } else {
-                $fee = ($val['maxFee'] - $datas->fee)/($val['maxFee']-$val['minFee']);
-            }
-
-            if (AttributModel::value('keuntungan') == 'benefit') {
-                $keuntungan = ($datas->keuntungan - $val['minKeuntungan'])/($val['maxKeuntungan']-$val['minKeuntungan']);       
-            } else {
-                $keuntungan = ($val['maxKeuntungan'] - $datas->keuntungan)/($val['maxKeuntungan']-$val['minKeuntungan']);
-            }
-
-            NilaiUtilityModel::where('id', $datas->id)->update(['modalUtility'=>$modal,
-                                                                'geraiUtility'=>$gerai,
-                                                                'bepUtility'=>$bep,
-                                                                'feeUtility'=>$fee,
-                                                                'keuntunganUtility'=>$keuntungan,
-            ]);
+            NilaiUtilityModel::where('id', $data->id)->update(['modalUtility'=>$resultUtility['modal'],
+                                                                'geraiUtility'=>$resultUtility['gerai'],
+                                                                'bepUtility'=>$resultUtility['bep'],
+                                                                'feeUtility'=>$resultUtility['fee'],
+                                                                'keuntunganUtility'=>$resultUtility['keuntungan'],
+                                                                ]);
         }
-        return redirect('datawaralaba'); //redirect route waralaba.index
+        // ================================== UPDATE UTILITY VALUE WHEN ATTRIBUT CHANGED ===============================
+        return redirect('datawaralaba');
     }
 
     public function destroy($id) // HAPUS DATA WARALABA, DATA KRITERIA, SEKALIGUS UPDATE NILAI UTILITY
     {
         DataWaralabaModel::find($id)->delete();
         NilaiUtilityModel::where('idDW', $id)->delete();
-
-        $val = $this->minMax();
+        // ================================== UPDATE UTILITY VALUE WHEN ATTRIBUT CHANGED ===============================
         $nilaiKriteria = NilaiUtilityModel::all();
-        foreach ($nilaiKriteria as $datas) {
+        foreach ($nilaiKriteria as $data) {
+            $resultUtility['modal'] = $this->utility($data->modal, 'modal', 'minModal', 'maxModal');
+            $resultUtility['gerai'] = $this->utility($data->gerai, 'gerai', 'minGerai', 'maxGerai');
+            $resultUtility['bep'] = $this->utility($data->bep, 'bep', 'minBep', 'maxBep');
+            $resultUtility['fee'] = $this->utility($data->fee, 'fee', 'minFee', 'maxFee');
+            $resultUtility['keuntungan'] = $this->utility($data->keuntungan, 'keuntungan', 'minKeuntungan', 'maxKeuntungan');
 
-            if (AttributModel::value('modal') == 'benefit') {
-                $modal = ($datas->modal - $val['minModal'])/($val['maxModal']-$val['minModal']);       
-            } else {
-                $modal = ($val['maxModal'] - $datas->modal)/($val['maxModal']-$val['minModal']);
-            }
-
-            if (AttributModel::value('gerai') == 'benefit') {
-                $gerai = ($datas->gerai - $val['minGerai'])/($val['maxGerai']-$val['minGerai']);       
-            } else {
-                $gerai = ($val['maxGerai'] - $datas->gerai)/($val['maxGerai']-$val['minGerai']);
-            }
-
-            if (AttributModel::value('bep') == 'benefit') {
-                $bep = ($datas->bep -  $val['minBep'])/( $val['maxBep']- $val['minBep']);       
-            } else {
-                $bep = ( $val['maxBep'] - $datas->bep)/( $val['maxBep']- $val['minBep']);
-            }
-
-            if (AttributModel::value('fee') == 'benefit') {
-                $fee = ($datas->fee - $val['minFee'])/($val['maxFee']-$val['minFee']);       
-            } else {
-                $fee = ($val['maxFee'] - $datas->fee)/($val['maxFee']-$val['minFee']);
-            }
-
-            if (AttributModel::value('keuntungan') == 'benefit') {
-                $keuntungan = ($datas->keuntungan - $val['minKeuntungan'])/($val['maxKeuntungan']-$val['minKeuntungan']);       
-            } else {
-                $keuntungan = ($val['maxKeuntungan'] - $datas->keuntungan)/($val['maxKeuntungan']-$val['minKeuntungan']);
-            }
-
-            NilaiUtilityModel::where('id', $datas->id)->update(['modalUtility'=>$modal,
-                                                                'geraiUtility'=>$gerai,
-                                                                'bepUtility'=>$bep,
-                                                                'feeUtility'=>$fee,
-                                                                'keuntunganUtility'=>$keuntungan,
-            ]);
+            NilaiUtilityModel::where('id', $data->id)->update(['modalUtility'=>$resultUtility['modal'],
+                                                                'geraiUtility'=>$resultUtility['gerai'],
+                                                                'bepUtility'=>$resultUtility['bep'],
+                                                                'feeUtility'=>$resultUtility['fee'],
+                                                                'keuntunganUtility'=>$resultUtility['keuntungan'],
+                                                                ]);
         }
-        return redirect('datawaralaba'); //redirect route waralaba.index
+        // ================================== UPDATE UTILITY VALUE WHEN ATTRIBUT CHANGED ===============================
+        return redirect('datawaralaba');
     }
 
-    public function minMax() // FUNCTION MENCARI MIN MAX DATA KRITERIA
-    {
-        $val['minModal'] = NilaiUtilityModel::min('modal');
-        $val['maxModal'] = NilaiUtilityModel::max('modal');
-        $val['minGerai'] = NilaiUtilityModel::min('gerai');
-        $val['maxGerai'] = NilaiUtilityModel::max('gerai');
-        $val['minBep'] = NilaiUtilityModel::min('bep');
-        $val['maxBep'] = NilaiUtilityModel::max('bep');
-        $val['minFee'] = NilaiUtilityModel::min('fee');
-        $val['maxFee'] = NilaiUtilityModel::max('fee');
-        $val['minKeuntungan'] = NilaiUtilityModel::min('keuntungan');
-        $val['maxKeuntungan'] = NilaiUtilityModel::max('keuntungan');
-        return $val;
+    public function utility($kriteriaVal, $attributVal, $kriteriaMin, $kriteriaMax) // PARAM 1 = NILAI KRITERIA 
+    {                                                                               // PARAM 2 = NAMA ATTRIBUT KRITERIA, EX : 'modal'
+        $kriteria['minModal'] = NilaiUtilityModel::min('modal');                    // PARAM 3 = NILAI KRITERIA MIN *
+        $kriteria['maxModal'] = NilaiUtilityModel::max('modal');                    // PARAM 4 = NILAI KRITERIA MAX *
+        $kriteria['minGerai'] = NilaiUtilityModel::min('gerai');                    // * LIHAT DAFTAR NYA DI DALAM FUNCTION
+        $kriteria['maxGerai'] = NilaiUtilityModel::max('gerai');
+        $kriteria['minBep'] = NilaiUtilityModel::min('bep');
+        $kriteria['maxBep'] = NilaiUtilityModel::max('bep');
+        $kriteria['minFee'] = NilaiUtilityModel::min('fee');
+        $kriteria['maxFee'] = NilaiUtilityModel::max('fee');
+        $kriteria['minKeuntungan'] = NilaiUtilityModel::min('keuntungan');
+        $kriteria['maxKeuntungan'] = NilaiUtilityModel::max('keuntungan');
+
+        if (AttributModel::value($attributVal) == 'benefit') {
+            $utilityVal = ($kriteriaVal - $kriteria[$kriteriaMin])/($kriteria[$kriteriaMax]-$kriteria[$kriteriaMin]);       
+        } else {
+            $utilityVal = ($kriteria[$kriteriaMax] - $kriteriaVal)/($kriteria[$kriteriaMax]-$kriteria[$kriteriaMin]);
+        }
+        return $utilityVal;
     }
 
 }
