@@ -27,4 +27,11 @@
         
         <a href="{{ url('/bobot/' . $data->id . '/edit')}}" class="btn btn-success">Edit</a></br></br>  
 
+    <script src={{ asset('assets/js/jquery.min.js') }} type="text/javascript"></script>
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            $('#dboLi').removeClass('inactive').addClass('active');
+        });
+    </script>
+
 @endsection

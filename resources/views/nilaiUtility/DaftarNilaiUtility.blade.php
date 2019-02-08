@@ -30,4 +30,10 @@
         </tbody>
     </table>
 
+    <script src={{ asset('assets/js/jquery.min.js') }} type="text/javascript"></script>
+        <script type="text/javascript">
+            $( document ).ready(function() {
+                $('#dnuLi').removeClass('inactive').addClass('active');
+            });
+        </script>
 @endsection

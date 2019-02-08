@@ -147,12 +147,6 @@ class DataWaralabaController extends Controller
         return redirect('datawaralaba');
     }
 
-    public function finalResultView()
-    {
-        $data = NilaiUtilityModel::all();
-        return view('result.DaftarResult')->with('data', $data); //buka file di view
-    }
-
 // =============================================== FORMULA AREA =======================================================================
     public function utility($kriteriaVal, $attributVal, $kriteriaMin, $kriteriaMax) // PARAM 1 = NILAI KRITERIA 
     {                                                                               // PARAM 2 = NAMA ATTRIBUT KRITERIA, EX : 'modal'

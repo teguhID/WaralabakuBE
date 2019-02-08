@@ -1,6 +1,6 @@
-@extends('layout/layout')
+@extends('/resources/views/layout/layout.blade.php')
 @section('title')
-    Data Detail Waralaba
+    Data Waralaba
 @endsection
 @section('content')
 
@@ -36,4 +36,11 @@
             </tr>
         </tbody>
     </table>
+
+    <script src={{ asset('assets/js/jquery.min.js') }} type="text/javascript"></script>
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            $('#dwLi').removeClass('inactive').addClass('active');
+        });
+    </script>
 @endsection

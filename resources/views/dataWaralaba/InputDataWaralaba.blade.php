@@ -36,4 +36,11 @@
     </br><input type="submit" class="btn btn-danger" value="Submit"></br></br>
     </form>
 </div> 
+
+<script src={{ asset('assets/js/jquery.min.js') }} type="text/javascript"></script>
+<script type="text/javascript">
+    $( document ).ready(function() {
+            $('#dwLi').removeClass('inactive').addClass('active');
+    });
+</script>
 @endsection

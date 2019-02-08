@@ -47,15 +47,15 @@
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <!-- Bootstrap core CSS     -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <!-- Animation library for notifications   -->
-    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
     <!--  Paper Dashboard core CSS    -->
-    <link href="assets/css/paper-dashboard.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ asset('assets/css/paper-dashboard.css') }}">
     <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="assets/css/demo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}">
     <!--  Fonts and icons     -->
-    <link href="assets/css/themify-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/css/themify-icons.css') }}">
 
 </head>
 <body>
@@ -76,38 +76,38 @@
             </div>
             <div id="sideDiv">
             <ul class="nav">
-                <li class="dbLi active">
+                <li class="inactive" id="dbLi">
                     <a class="dbBtn" href="{{ url('/') }}">
                         <i class="ti-panel"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="dwLi inactive">
+                <li class="inactive" id="dwLi">
                     <a class="dwBtn" href="{{ url('/datawaralaba') }}">
                         <i class="ti-view-grid"></i>
                         <p>Data Waralaba</p>
                     </a>
                 </li>
-                <li class="dboLi inactive">
-                    <a class="dboBtn" href="#">
+                <li class="inactive" id="dboLi">
+                    <a class="dboBtn" href="{{ url('/bobot') }}">
                         <i class="ti-view-list-alt"></i>
                         <p>Data Bobot</p>
                     </a>
                 </li>
-                <li class="daLi inactive">
-                    <a class="daBtn" href="#">
+                <li class="inactive" id="daLi">
+                    <a class="daBtn" href="{{ url('/attribut') }}">
                         <i class="ti-layout-accordion-merged"></i>
                         <p>Data Attribut</p>
                     </a>
                 </li>
-                <li class="dnuLi inactive">
-                    <a class="dnuBtn" href="#">
+                <li class="inactive" id="dnuLi">
+                    <a class="dnuBtn" href="{{ url('/nilaiutility') }}">
                         <i class="ti-layout-grid2-thumb"></i>
                         <p>Data Nilai Utility</p>
                     </a>
                 </li>
-                <li class="dhLi inactive">
-                    <a class="dhBtn" href="#">
+                <li class="inactive" id="dhLi">
+                    <a class="dhBtn" href="{{ url('/result') }}">
                         <i class="ti-layout-list-thumb-alt"></i>
                         <p>Data Hasil</p>
                     </a>
@@ -150,52 +150,6 @@
 
         <div class="content">
             <div class="container-fluid">
-                <div class="row"> {{-- CONTENT PERTAMA --}}
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card">
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-info text-center">
-                                            <i class="ti-server"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                            <p>Data</p>
-                                            0 Items
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card">
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-warning text-center">
-                                            <i class="ti-crown"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                            <p>Standing</p>
-                                            1. Name
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr />
-                                </div>
-                            </div>
-                        </div>
-                    </div>       
-                </div>
                 {{-- CONTENT ISI --}}
                 @yield('content')
             </div>
@@ -226,35 +180,23 @@
 </body>
 
     <!--   Core JS Files   -->
-    <script src="assets/js/jquery.min.js" type="text/javascript"></script>
-	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src={{ asset('assets/js/jquery.min.js') }} type="text/javascript"></script>
+	<script src={{ asset('assets/js/bootstrap.min.js') }} type="text/javascript"></script>
 
 	<!--  Checkbox, Radio & Switch Plugins -->
-	<script src="assets/js/bootstrap-checkbox-radio.js"></script>
+	<script src={{ asset('assets/js/bootstrap-checkbox-radio.js') }}></script>
 
-	<!--  Charts Plugin -->
-	<script src="assets/js/chartist.min.js"></script>
 
     <!--  Notifications Plugin    -->
-    <script src="assets/js/bootstrap-notify.js"></script>
+    <script src={{ asset('assets/js/bootstrap-notify.js') }}></script>
 
-    <!--  Google Maps Plugin    -->
-    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script> -->
-
-    <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
-	<script src="assets/js/paper-dashboard.js"></script>
+    <script src={{ asset('assets/js/paper-dashboard.js') }}></script>
 
 	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-	<script src="assets/js/demo.js"></script>
+    {{-- <script src={{  }}"assets/js/demo.js"></script>
     <script type="text/javascript">
-    	    $('#dbBtn, #dwBtn').click(function () {
-                if (this.id == 'dbBtn') {
-                    alert('Submit 1 clicked');
-                }
-                else if (this.id == 'sudwBtnbmit2') {
-                    alert('Submit 2 clicked');
-                }
-            });
-    </script>
-
+        $( document ).ready(function() {
+            
+        });
+    </script> --}}
 </html>

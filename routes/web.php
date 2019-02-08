@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
-
+// Route::get('/', function () {
+//     return view('dashboard','DashboardController');
+// });
+Route::get('/','DashboardController@index');
 Route::resource('datawaralaba','DataWaralabaController'); //resource untuk langsung membuat crud url
 Route::resource('bobot','BobotController'); //resource untuk langsung membuat crud url
 Route::resource('attribut','AttributController'); //resource untuk langsung membuat crud url
 Route::resource('nilaiutility', 'NilaiUtilityController');
 Route::get('test', 'DataWaralabaController@dataUtility');
-Route::get('result', 'DataWaralabaController@finalResultView');
+Route::get('result', 'NilaiUtilityController@finalResultView');
