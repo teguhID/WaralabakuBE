@@ -1,10 +1,12 @@
 @extends('layout/layout')
 @section('title')
-Attribut
+    Attribut
+@endsection
+@section('dashboardTitle')
+    Edit Data Attribut
 @endsection
 @section('content')
-<h4>Attribut</h4></br></br>
-<div class="col-md-4">    
+<div class="col-md-6">    
     <form action="{{ url('attribut/' . $data->id) }}" method="POST">
         {{ method_field('PUT') }}
         {{ csrf_field() }}
@@ -13,7 +15,7 @@ Attribut
 
         @foreach ($fields as $field)
             <label>{{ $field }}</label></br>
-                <select name={{ $field }} class="form-control">
+                <select name={{ $field }} class="form-control border-input">
                     @if ($data->$field == 'cost')
                         <option value="cost" selected>Cost</option>
                         <option value="benefit" >Benefit</option>
@@ -23,7 +25,7 @@ Attribut
                     @endif
                 </select>    
         @endforeach   
-    </br><input type="submit" class="btn btn-danger" value="Submit"></br></br>
+    </br><input type="submit" class="btn btn-primary btn-lg" value="Submit"></br></br>
     </form>
 </div>
 

@@ -25,4 +25,9 @@ class DashboardController extends Controller
         return view('dashboard', compact('allData', 'dataValCount', 'bestData', 'bobotData', 'attributData', 'utilityData'));
     }
 
+    public function about()
+    {
+        return view('about');
+    }
+
 }

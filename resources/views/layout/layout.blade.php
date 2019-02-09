@@ -1,45 +1,10 @@
-{{-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
-</head>
-<body>
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{{ url('/') }}">Waralabaku</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="btn btn-outline-primary" href="{{ url('/datawaralaba') }}"> Data Waralaba <span class="sr-only">(current)</span></a>
-                        <a class="btn btn-outline-primary" href="{{ url('/bobot') }}">Data Bobot</a>
-                        <a class="btn btn-outline-primary" href="{{ url('/attribut') }}">Data Attribut</a>
-                        <a class="btn btn-outline-primary" href="{{ url('/nilaiutility') }}">Data Nilai Utility</a>
-                        <a class="btn btn-outline-primary" href="{{ url('/result') }}">Data Result</a>
-                    </div>
-                </div>
-        </nav></br>
-    
-        <div class="d-flex justify-content-center">
-            <div class="col-md-12">
-                @yield('content')
-            </div>
-        </div>
-</body>
-</html> --}}
-
 
 <!doctype html>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+	{{-- <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png"> --}}
+	<link rel="icon" type="image/png" sizes="96x66" href="assets/img/logo.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<title>@yield('title')</title>
@@ -56,12 +21,15 @@
     <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}">
     <!--  Fonts and icons     -->
     <link rel="stylesheet" href="{{ asset('assets/css/themify-icons.css') }}">
+    {{-- Data tables --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/dataTables.bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/jquery.dataTables.min.css') }}">
 
 </head>
 <body>
 
 <div class="wrapper">
-    <div class="sidebar" data-background-color="white" data-active-color="danger">
+    <div class="sidebar" data-background-color="black" data-active-color="warning">
 
     <!--
 		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
@@ -71,7 +39,8 @@
     	<div class="sidebar-wrapper">
             <div class="logo">
                 <a href="{{ url('/') }}" class="simple-text">
-                    WARALABAKU
+                    <img src="assets/img/fav_waralabaku.png" alt="Trulli" width="40" height="26">
+                    <h6> </h6>WARALABAKU
                 </a>
             </div>
             <div id="sideDiv">
@@ -141,8 +110,10 @@
                                 <li><a href="#">Log Out</a></li>
                             </ul>
                         </li>
-						</ul>
-
+                    </ul>
+                    <ul class="nav navbar-nav navbar-left">
+                        <div class="navbar-brand">@yield('dashboardTitle')</div>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -162,7 +133,7 @@
                         <ul>
 
                             <li>
-                                <a href="#">
+                                <a href="{{ url('/about') }}">
                                     About
                                 </a>
                             </li>
@@ -184,8 +155,11 @@
 	<script src={{ asset('assets/js/bootstrap.min.js') }} type="text/javascript"></script>
 
 	<!--  Checkbox, Radio & Switch Plugins -->
-	<script src={{ asset('assets/js/bootstrap-checkbox-radio.js') }}></script>
-
+    <script src={{ asset('assets/js/bootstrap-checkbox-radio.js') }}></script>
+    
+    {{-- Data Tables --}}
+    <script src={{ asset('assets/js/jquery.dataTables.js') }}></script>
+    <script src={{ asset('assets/js/dataTables.bootstrap.js') }}></script>
 
     <!--  Notifications Plugin    -->
     <script src={{ asset('assets/js/bootstrap-notify.js') }}></script>

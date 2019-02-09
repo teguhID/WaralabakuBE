@@ -1,41 +1,23 @@
-@extends('/resources/views/layout/layout.blade.php')
+@extends('layout/layout')
 @section('title')
     Data Waralaba
 @endsection
+@section('dashboardTitle')
+    Detail Data {{$data->nama}}
+@endsection
 @section('content')
 
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th>nama</th>
-                <th>alamat</th>
-                <th>jenis</th>
-                <th>telephone</th>
-                <th>email</th>
-                <th>web</th>
-                <th>modal</th>
-                <th>gerai</th>
-                <th>bep</th>
-                <th>fee</th>
-                <th>keuntungan</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{$data->nama}}</td>
-                <td>{{$data->alamat}}</td>
-                <td>{{$data->jenis}}</td>
-                <td>{{$data->phone}}</td>
-                <td>{{$data->email}}</td>
-                <td>{{$data->web}}</td>
-                <td>{{$data->modal}}</td>
-                <td>{{$data->gerai}}</td>
-                <td>{{$data->bep}}</td>
-                <td>{{$data->fee}}</td>
-                <td>{{$data->keuntungan}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <label>Nama : </label>{{' '}}<label>{{$data->nama}}</label></br>
+    <label>Alamat : </label>{{' '}}<label>{{$data->alamat}}</label></br>
+    <label>Jenis Usaha : </label>{{' '}}<label>{{$data->jenis}}</label></br>
+    <label>Telephone : </label>{{' '}}<label>{{$data->phone}}</label></br>
+    <label>Email : </label>{{' '}}<label>{{$data->email}}</label></br>
+    <label>Web : </label>{{' '}}<label>{{$data->web}}</label></br>
+    <label>Modal Awal : </label>{{' '}}<label>{{$data->modal}}</label></br>
+    <label>Jumlah Gerai : </label>{{' '}}<label>{{$data->gerai}}</label></br>
+    <label>Perkiraan BEP : </label>{{' '}}<label>{{$data->bep}}</label></br>
+    <label>Franchise Fee : </label>{{' '}}<label>{{$data->fee}}</label></br>
+    <label>Perkiraan Keuntungan Yang Di Dapat : </label>{{' '}}<label>{{$data->keuntungan}}</label></br>
 
     <script src={{ asset('assets/js/jquery.min.js') }} type="text/javascript"></script>
     <script type="text/javascript">

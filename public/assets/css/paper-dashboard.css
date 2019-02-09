@@ -137,6 +137,10 @@ strong {
     color: #403D39;
 }
 
+.white-color {
+    color: rgb(241, 239, 239);
+}
+
 .icon-primary {
     color: #7A9E9F;
 }
@@ -190,7 +194,7 @@ a {
 }
 
 a:hover, a:focus {
-    color: #EB5E28;
+    color: rgb(202, 200, 200);
     text-decoration: none;
 }
 
@@ -447,7 +451,7 @@ hr {
 .sidebar[data-background-color="black"]:after, .sidebar[data-background-color="black"]:before,
 .off-canvas-sidebar[data-background-color="black"]:after,
 .off-canvas-sidebar[data-background-color="black"]:before {
-    background-color: #212120;
+    background-color: #227093;
 }
 
 .sidebar[data-background-color="black"] .logo,
@@ -501,7 +505,7 @@ hr {
 
 .sidebar[data-active-color="danger"] .nav li.active > a,
 .off-canvas-sidebar[data-active-color="danger"] .nav li.active > a {
-    color: #EB5E28;
+    color: rgb(245, 144, 104);
     opacity: 1;
 }
 
@@ -2154,7 +2158,7 @@ textarea.form-control {
 .card {
     border-radius: 6px;
     box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
-    background-color: #FFFFFF;
+    background-color: rgb(255, 255, 255);
     color: #252422;
     margin-bottom: 20px;
     position: relative;
@@ -2215,6 +2219,12 @@ textarea.form-control {
 .card .title {
     margin: 0;
     color: #252422;
+    font-weight: 300;
+}
+
+.card .title-white {
+    margin: 0;
+    color: rgb(241, 239, 239);
     font-weight: 300;
 }
 
@@ -2302,6 +2312,12 @@ textarea.form-control {
 .card .icon-big {
     font-size: 3em;
     min-height: 64px;
+}
+
+.card .button {
+    text-align: center;
+    font-size: 4.42em;
+    min-height: 50px;
 }
 
 .card .numbers {
@@ -3846,4 +3862,12 @@ textarea.form-control {
         -ms-overflow-style: -ms-autohiding-scrollbar;
         -webkit-overflow-scrolling: touch;
     }
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
 }

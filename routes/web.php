@@ -15,6 +15,7 @@
 //     return view('dashboard','DashboardController');
 // });
 Route::get('/','DashboardController@index');
+Route::get('about','DashboardController@about');
 Route::resource('datawaralaba','DataWaralabaController'); //resource untuk langsung membuat crud url
 Route::resource('bobot','BobotController'); //resource untuk langsung membuat crud url
 Route::resource('attribut','AttributController'); //resource untuk langsung membuat crud url

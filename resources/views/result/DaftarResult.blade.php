@@ -1,13 +1,16 @@
+<?php $no = 1; ?>
 @extends('layout/layout')
 @section('title')
     Data Result
 @endsection
+@section('dashboardTitle')
+    Data Result
+@endsection
 @section('content')
-<h4>Data Result</h4></br></br>
-
-    <table class="table table-hover">
+    <table class="table table-hover" id="tableResult">
         <thead>
             <tr>
+                <th>no</th>
                 <th>nama</th>
                 <th>nilai</th>
             </tr>
@@ -15,6 +18,7 @@
         <tbody>
             @foreach ($data as $datas)
             <tr>
+                <td>{{$no++}}</td>
                 <td>{{$datas->nama}}</td>
                 <td>{{$datas->hasil}}</td>
             </tr>
@@ -25,6 +29,7 @@
     <script type="text/javascript">
         $( document ).ready(function() {
             $('#dhLi').removeClass('inactive').addClass('active');
+            $('#tableResult').DataTable();
         });
     </script>
 
