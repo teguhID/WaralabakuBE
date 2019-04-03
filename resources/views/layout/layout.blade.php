@@ -39,8 +39,8 @@
     	<div class="sidebar-wrapper">
             <div class="logo">
                 <a href="{{ url('/') }}" class="simple-text">
-                    <img src="assets/img/fav_waralabaku.png" alt="Trulli" width="40" height="26">
-                    <h6> </h6>WARALABAKU
+                    <img src="../../assets/img/fav_waralabaku.png" alt="Trulli" width="40" height="26">
+                    <h6> WARALABAKU </h6>
                 </a>
             </div>
             <div id="sideDiv">

@@ -47,7 +47,7 @@
                     <form action="{{ url('datawaralaba/' . $datas->id) }}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
-                    <input type="submit" class="btn btn-warning btn-xs" onclick="return confirm('Yalin Ingin Hapus {{ $datas->nama }} ?')" value="Delete">
+                    <input type="submit" class="btn btn-warning btn-xs" onclick="return confirm('Yakin Ingin Hapus Data {{ $datas->nama }} ?')" value="Delete">
                     </form>
                 </td>
             </tr>

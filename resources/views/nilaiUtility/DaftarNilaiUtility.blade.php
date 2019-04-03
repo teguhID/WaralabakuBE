@@ -24,11 +24,11 @@
             <tr>
                 <td>{{$no++}}</td>
                 <td>{{$datas->nama}}</td>
-                <td>{{$datas->modal}}</td>
-                <td>{{$datas->gerai}}</td>
-                <td>{{$datas->bep}}</td>
-                <td>{{$datas->fee}}</td>
-                <td>{{$datas->keuntungan}}</td>
+                <td>{{$datas->modalUtility}}</td>
+                <td>{{$datas->geraiUtility}}</td>
+                <td>{{$datas->bepUtility}}</td>
+                <td>{{$datas->feeUtility}}</td>
+                <td>{{$datas->keuntunganUtility}}</td>
             </tr>
             @endforeach
         </tbody>

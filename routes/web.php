@@ -22,3 +22,6 @@ Route::resource('attribut','AttributController'); //resource untuk langsung memb
 Route::resource('nilaiutility', 'NilaiUtilityController');
 Route::get('test', 'DataWaralabaController@dataUtility');
 Route::get('result', 'NilaiUtilityController@finalResultView');
+
+Route::post('api', 'ApiController@index');
+Route::get('api/get', 'ApiController@getData');
