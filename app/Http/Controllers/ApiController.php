@@ -15,8 +15,10 @@ class ApiController extends Controller
         return NilaiUtilityModel::where('keuntungan', '<=', $keuntungan)->where('fee', '=', $fee)->get();
     }
 
-    public function getData()
-    {
-        return json_encode(array('movies' => NilaiUtilityModel::get()));
+    public function getData1(){
+        return json_encode(array('data' => NilaiUtilityModel::where('fee', '=', '1')->get()));
+    }
+    public function getData2(){
+        return json_encode(array('data' => NilaiUtilityModel::where('fee', '=', '2')->get()));
     }
 }
