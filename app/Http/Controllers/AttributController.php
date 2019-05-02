@@ -41,9 +41,6 @@ class AttributController extends Controller
                                                                 'keuntunganUtility'=>$resultUtility['keuntungan'],
                                                                 'hasil'=> $resultUtility['finalResult'],
                                                                 ]);
-            DataWaralabaModel::where('id', $data->idDW)->update([
-                'hasil' => $resultUtility['finalResult'],
-            ]);
         }
         // ================================== UPDATE UTILITY VALUE WHEN ATTRIBUT CHANGED ===============================
         return redirect('attribut');

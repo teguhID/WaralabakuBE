@@ -8,6 +8,7 @@ use App\DataWaralabaModel;
 
 class ApiController extends Controller
 {
+    
     public function getData1(){// OK
         return $this->query('jenis', '=', 'makanan', 'modal', '<=', 7000000, 'gerai', '>=', 65, 'fee', '=', 'ada', 'bep', '<=', 3, 'keuntungan', '<=', 100);
     }
@@ -158,6 +159,11 @@ class ApiController extends Controller
         return $this->query1('modal', '>=', 7000000, 'gerai', '<=', 65, 'fee', '=', 'ada', 'bep', '>=', 3, 'keuntungan', '>=', 100);
     }
 
+    public function detailData($id)
+    {
+        return json_encode(array('data' => DataWaralabaModel::where('id', '=', $id)->get()));
+    }
+
     public function query(
         $jenis, $jenisStatement, $jenisValue,
         $modal, $modalStatement, $modalValue,
@@ -167,14 +173,14 @@ class ApiController extends Controller
         $keuntungan, $keuntunganStatement, $keuntunganValue
     )
     {
-        return json_encode(array('data' => DataWaralabaModel::where($jenis, $jenisStatement, $jenisValue)
-                                                                ->where($modal, $modalStatement, $modalValue)
-                                                                ->where($gerai, $geraiStatement, $geraiValue)
-                                                                ->where($fee, $feeStatement, $feeValue)
-                                                                ->where($bep, $bepStatement, $bepValue)
-                                                                ->where($keuntungan, $keuntunganStatement, $keuntunganValue)
-                                                                ->orderBy('hasil', 'desc')
-                                                                ->get()));
+        return json_encode(array('data' => DataWaralabaModel::join('nilaiutility', 'datawaralaba.id', '=', 'nilaiutility.idDW')->select('datawaralaba.*','nilaiutility.hasil')
+                                                                                                    ->where('datawaralaba.' . $jenis, $jenisStatement, $jenisValue)
+                                                                                                    ->where('datawaralaba.' . $modal, $modalStatement, $modalValue)
+                                                                                                    ->where('datawaralaba.' . $gerai, $geraiStatement, $geraiValue)
+                                                                                                    ->where('datawaralaba.' . $fee, $feeStatement, $feeValue)
+                                                                                                    ->where('datawaralaba.' . $bep, $bepStatement, $bepValue)
+                                                                                                    ->where('datawaralaba.' . $keuntungan, $keuntunganStatement, $keuntunganValue)
+                                                                                                    ->orderBy('hasil', 'desc')->get()));
     }
     public function query1(
         $modal, $modalStatement, $modalValue,
@@ -184,12 +190,12 @@ class ApiController extends Controller
         $keuntungan, $keuntunganStatement, $keuntunganValue
     )
     {
-        return json_encode(array('data' => DataWaralabaModel::where($modal, $modalStatement, $modalValue)
-                                                                ->where($gerai, $geraiStatement, $geraiValue)
-                                                                ->where($fee, $feeStatement, $feeValue)
-                                                                ->where($bep, $bepStatement, $bepValue)
-                                                                ->where($keuntungan, $keuntunganStatement, $keuntunganValue)
-                                                                ->orderBy('hasil', 'desc')
-                                                                ->get()));
+        return json_encode(array('data' => DataWaralabaModel::join('nilaiutility', 'datawaralaba.id', '=', 'nilaiutility.idDW')->select('datawaralaba.*','nilaiutility.hasil')
+                                                                                                                                ->where('datawaralaba.' . $modal, $modalStatement, $modalValue)
+                                                                                                                                ->where('datawaralaba.' . $gerai, $geraiStatement, $geraiValue)
+                                                                                                                                ->where('datawaralaba.' . $fee, $feeStatement, $feeValue)
+                                                                                                                                ->where('datawaralaba.' . $bep, $bepStatement, $bepValue)
+                                                                                                                                ->where('datawaralaba.' . $keuntungan, $keuntunganStatement, $keuntunganValue)
+                                                                                                                                ->orderBy('hasil', 'desc')->get()));
     }
 }

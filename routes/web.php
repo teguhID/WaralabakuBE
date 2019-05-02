@@ -26,3 +26,5 @@ Route::get('result', 'NilaiUtilityController@finalResultView');
 for ($i=0; $i <= 48; $i++) { 
     Route::get('api/getData' . $i, 'ApiController@getData' . $i);    
 }
+
+Route::get('api/getData/detail/{id}', 'ApiController@detailData');

@@ -65,9 +65,6 @@ class DataWaralabaController extends Controller
                                                                 'keuntunganUtility'=>$resultUtility['keuntungan'],
                                                                 'hasil'=> $resultUtility['finalResult'],
                                                                 ]);
-            DataWaralabaModel::where('id', $dataWaralaba->id)->update([
-                'hasil' => $resultUtility['finalResult'],
-            ]);
         }
         // ================================== UPDATE UTILITY VALUE WHEN ATTRIBUT CHANGED ===============================
         return redirect('datawaralaba'); 
@@ -119,9 +116,6 @@ class DataWaralabaController extends Controller
                                                                 'keuntunganUtility'=>$resultUtility['keuntungan'],
                                                                 'hasil'=> $resultUtility['finalResult'],
                                                                 ]);
-            DataWaralabaModel::where('id', $id)->update([
-                'hasil' => $resultUtility['finalResult'],
-            ]);
         }
         // ================================== UPDATE UTILITY VALUE WHEN ATTRIBUT CHANGED ===============================
         return redirect('datawaralaba');
