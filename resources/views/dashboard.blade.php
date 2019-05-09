@@ -6,7 +6,6 @@
     Sistem Pendukung Keputusan Rekomendasi Waralaba </br> Dengan Metode SMART
 @endsection
 @section('content')
-
     <div class="row"> {{-- CONTENT PERTAMA --}}
         <div class="col-lg-4 col-sm-8">
             <div class="card" style="background-color:#eb4d4b;">

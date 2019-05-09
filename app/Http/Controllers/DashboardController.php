@@ -10,6 +10,11 @@ use App\BobotModel;
 
 class DashboardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index() //MENAMPILKAN DATA WARALABA 
     {
         $allData = DataWaralabaModel::offset(0)->limit(5)->get();

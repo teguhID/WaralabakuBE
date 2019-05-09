@@ -38,7 +38,7 @@
 
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="{{ url('/') }}" class="simple-text">
+                <a href="{{ url('/home') }}" class="simple-text">
                     <img src="../../assets/img/fav_waralabaku.png" alt="Trulli" width="40" height="26">
                     <h6> WARALABAKU </h6>
                 </a>
@@ -46,7 +46,7 @@
             <div id="sideDiv">
             <ul class="nav">
                 <li class="inactive" id="dbLi">
-                    <a class="dbBtn" href="{{ url('/') }}">
+                    <a class="dbBtn" href="{{ url('/home') }}">
                         <i class="ti-panel"></i>
                         <p>Dashboard</p>
                     </a>
@@ -107,7 +107,17 @@
                                 </a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">My Account</a></li>
-                                <li><a href="#">Log Out</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
                             </ul>
                         </li>
                     </ul>

@@ -7,6 +7,11 @@ use App\NilaiUtilityModel;
 
 class NilaiUtilityController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $data = NilaiUtilityModel::all();
