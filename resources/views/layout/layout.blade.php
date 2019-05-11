@@ -20,7 +20,8 @@
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}">
     <!--  Fonts and icons     -->
-    <link rel="stylesheet" href="{{ asset('assets/css/themify-icons.css') }}">
+    <link rel="stylesheet" type="text/css" href={{ asset('assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}>
+    <link rel="stylesheet" type="text/css" href={{ asset('assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}>
     {{-- Data tables --}}
     <link rel="stylesheet" href="{{ asset('assets/css/dataTables.bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/jquery.dataTables.min.css') }}">
@@ -47,37 +48,37 @@
             <ul class="nav">
                 <li class="inactive" id="dbLi">
                     <a class="dbBtn" href="{{ url('/home') }}">
-                        <i class="ti-panel"></i>
+                        <i class="lnr lnr-home"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li class="inactive" id="dwLi">
                     <a class="dwBtn" href="{{ url('/datawaralaba') }}">
-                        <i class="ti-view-grid"></i>
+                        <i class="lnr lnr-list"></i>
                         <p>Data Waralaba</p>
                     </a>
                 </li>
                 <li class="inactive" id="dboLi">
                     <a class="dboBtn" href="{{ url('/bobot') }}">
-                        <i class="ti-view-list-alt"></i>
+                        <i class="lnr lnr-indent-increase"></i>
                         <p>Data Bobot</p>
                     </a>
                 </li>
                 <li class="inactive" id="daLi">
                     <a class="daBtn" href="{{ url('/attribut') }}">
-                        <i class="ti-layout-accordion-merged"></i>
+                        <i class="lnr lnr-line-spacing"></i>
                         <p>Data Attribut</p>
                     </a>
                 </li>
                 <li class="inactive" id="dnuLi">
                     <a class="dnuBtn" href="{{ url('/nilaiutility') }}">
-                        <i class="ti-layout-grid2-thumb"></i>
+                        <i class="lnr lnr-direction-ltr"></i>
                         <p>Data Nilai Utility</p>
                     </a>
                 </li>
                 <li class="inactive" id="dhLi">
                     <a class="dhBtn" href="{{ url('/result') }}">
-                        <i class="ti-layout-list-thumb-alt"></i>
+                        <i class="lnr lnr-sort-amount-asc"></i>
                         <p>Data Hasil</p>
                     </a>
                 </li>
@@ -101,7 +102,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="ti-user"></i>
+                                    <i class="lnr lnr-user"></i>
 									<p>Account</p>
 									<b class="caret"></b>
                                 </a>

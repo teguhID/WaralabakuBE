@@ -13,19 +13,19 @@
                     <div class="row">
                         <div class="col-xs-2">
                             <div class="icon-big white-color text-center">
-                                <i class="ti-server"></i>
+                                <i class="lnr lnr-database"></i>
                             </div>
                         </div>
                         <div class="col-xs-10">
                             <div class="numbers">
                                 <p class="white-color">Database Waralaba</p>
-                                <font class="white-color">{{ $dataValCount . '  Data' }}</font>
+                                <font class="white-color"> {{ $dataValCount . '  Data' }}</font>
                             </div>
                         </div>
                     </div>
                     <div class="footer">
                         <hr/>
-                        <a href="{{ url('/datawaralaba') }}" class="ti-arrow-circle-right white-color"> Lihat Data</a>
+                        <a href="{{ url('/datawaralaba') }}" class="white-color"> <i class="lnr lnr-chevron-right-circle"></i> Lihat Data</a>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col-xs-2">
                             <div class="icon-big white-color text-center">
-                                <i class="ti-crown"></i>
+                                <i class="lnr lnr-license"></i>
                             </div>
                         </div>
                         <div class="col-xs-10">
@@ -48,7 +48,7 @@
                     </div>
                     <div class="footer">
                         <hr/>
-                        <a href="{{ url('/result') }}" class="ti-arrow-circle-right white-color"> Lihat Semua Rekomendasi</a>
+                        <a href="{{ url('/result') }}" class="white-color"><i class="lnr lnr-chevron-right-circle"></i> Lihat Semua Rekomendasi </a>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,8 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="button white-color">
-                                    <i class="ti-plus"><h6>Input Data Baru</h6></i>
+                                    <i class="lnr lnr-plus-circle"></i>
+                                    <h6>Input Data Baru</h6></i>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +95,7 @@
                         </tbody>
                         <tfoot>
                                 <tr>
-                                    <td><a href="{{ url('/datawaralaba') }}" class="ti-arrow-circle-right"> Lihat Data</a></td>
+                                    <td><a href="{{ url('/datawaralaba') }}"><i class="lnr lnr-chevron-right-circle"></i> Lihat Data </a></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
@@ -118,7 +119,7 @@
                     <h5> Keuntungan : {{ $data->keuntunganNorm }}</h5>
                     <hr/>
                 </font>
-                    <a href="{{ url('/bobot') }}" class="ti-arrow-circle-right white-color"> Lihat Data</a>
+                    <a href="{{ url('/bobot') }}" class="white-color"><i class="lnr lnr-chevron-right-circle"></i> Lihat Data</a>
                 @endforeach
                 </div>
             </div>
@@ -138,7 +139,7 @@
                     <h5> Keuntungan : {{ $data->keuntungan }}</h5>
                     <hr/>
                 </font>
-                    <a href="{{ url('/attribut') }}" class="ti-arrow-circle-right white-color"> Lihat Data</a>
+                    <a href="{{ url('/attribut') }}" class="white-color"><i class="lnr lnr-chevron-right-circle"></i> Lihat Data</a>
                 @endforeach
                 </div>
             </div>
@@ -168,7 +169,7 @@
                         </tbody>
                         <tfoot>
                                 <tr>
-                                    <td><a href="{{ url('/result') }}" class="ti-arrow-circle-right"> Lihat Semua</a></td>
+                                    <td><a href="{{ url('/result') }}"><i class="lnr lnr-chevron-right-circle"></i> Lihat Semua </a></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
