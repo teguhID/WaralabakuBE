@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	{{-- <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png"> --}}
-	<link rel="icon" type="image/png" sizes="96x66" href="assets/img/logo.png">
+	<link rel="icon" href="assets/img/logos.png" type="image/png" sizes="16x16">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<title>@yield('title')</title>

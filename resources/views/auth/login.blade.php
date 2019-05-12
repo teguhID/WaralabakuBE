@@ -1,5 +1,6 @@
 @extends('../auth/layout')
 @section('content')
+<body style="background-image: linear-gradient(to right,  #60a3bc, #ECF0F1);">
 	<div class="limiter">
 		<div class="fixed-top" style=" ">
 			<form action={{ __('register') }} style="padding: 2vw; right: 0; position: absolute;">
@@ -10,11 +11,11 @@
 		</div>
 		<div class="container-login100">
 			<div class="p-t-50 p-b-90">
-				<form autocomplete="off" class="login100-form validate-form" method="POST" action="{{ route('login') }}">
+				<form autocomplete="off" class="login100-form validate-form" method="POST" action="{{ route('login') }}">	
 					<span class="login100-form-title p-b-51">
+						<img src="../../assets/img/logo.png" height="72" width="80" style="padding-bottom: 1.5vw"><br>
 						Login
 					</span>
-
 					
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Email is wrong">
 						<input type="email" class="input100 form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="email" required autofocus>
@@ -47,15 +48,12 @@
 				</form>
 			</div>
 		</div>
-		<div class="fixed-bottom" style="padding: 2vw; color: #34495e;">
-			<span class="lnr lnr-apartment">
-				<span style="font-size: 18px; font-family: Verdana, Geneva, Tahoma, sans-serif">
-					Data Center Waralabaku
-				</span>
-			</span>
+		<div class="fixed-bottom" style="z-index: -1;">
+			<img src="../../assets/img/aladin.png" alt="aladin" width="600" height="600" style="opacity: 0.3; filter: alpha(opacity=50); padding-left: 5vw; padding-bottom: 3vw">
 		</div>
 	</div>
 	
 
 	<div id="dropDownSelect1"></div>
+</body>
 	@endsection

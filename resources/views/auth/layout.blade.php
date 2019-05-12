@@ -27,7 +27,7 @@
     <!--===============================================================================================-->
       <title>@yield('title')</title>
 </head>
-<body style="background-image: linear-gradient(#f3f1ef, #bdc3c7);">
+
         @yield('content')
         <!--===============================================================================================-->
 	    <script src={{ asset('assets/vendor/jquery/jquery-3.2.1.min.js') }}></script>
@@ -45,5 +45,5 @@
         <script src={{ asset('assets/vendor/countdowntime/countdowntime.js') }}></script>
     <!--===============================================================================================-->
         <script src={{ asset('assets/js/main.js') }}></script>
-</body>
+
 </html>

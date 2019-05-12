@@ -1,5 +1,6 @@
 @extends('../auth/layout')
 @section('content')
+<body style="background-image: linear-gradient(to right,  #57606f, #ECF0F1);">
 	<div class="limiter">
 		<div class="fixed-top" style=" ">
 			<form action={{ __('login') }} style="padding: 2vw; right: 0; position: absolute;">
@@ -12,6 +13,7 @@
 			<div class="p-t-50 p-b-90">
 				<form class="login100-form validate-form" autocomplete="off" method="POST" action="{{ route('register') }}">
 					<span class="login100-form-title p-b-51">
+						<img src="../../assets/img/logo.png" height="72" width="80" style="padding-bottom: 1.5vw"><br>
 						Register
 					</span>
                     @csrf
@@ -66,15 +68,12 @@
 				</form>
 			</div>
 		</div>
-		<div class="fixed-bottom" style="padding: 2vw; color: #34495e;">
-			<span class="lnr lnr-apartment">
-				<span style="font-size: 18px; font-family: Verdana, Geneva, Tahoma, sans-serif">
-					Data Center Waralabaku
-				</span>
-			</span>
-		</div>
+		<div class="fixed-bottom" style="padding-bottom: 7vw; padding-left: 6vw; z-index: -1;">
+				<img src="../../assets/img/morgiana.png" alt="aladin" width="600" height="460" style="opacity: 0.3; filter: alpha(opacity=50);">
+			</div>
 	</div>
 	
 
 	<div id="dropDownSelect1"></div>
+</body>
 	@endsection

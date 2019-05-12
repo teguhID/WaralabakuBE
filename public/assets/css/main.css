@@ -144,9 +144,9 @@ iframe {
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  padding: 15px;
+  padding-right: 21vw;
   
   background-position: center;
   background-size: cover;
@@ -166,7 +166,7 @@ iframe {
 [ Form ]*/
 
 .login100-form {
-  width: 100%;
+  width: 150%;
 }
 
 .login100-form-title {
