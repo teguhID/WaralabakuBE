@@ -2,13 +2,13 @@
 @section('content')
 <body style="background-image: linear-gradient(to right,  #60a3bc, #ECF0F1);">
 	<div class="limiter">
-		<div class="fixed-top" style=" ">
+		{{-- <div class="fixed-top" style=" ">
 			<form action={{ __('register') }} style="padding: 2vw; right: 0; position: absolute;">
-				<button type="submit" class="btn btn-outline-success">
+				<button type="submit" class="btn btn-outline-primary">
 					<span class="lnr lnr-pencil" style="padding-right: 0.5vw;"></span> Register
 				</button>
 			</form>
-		</div>
+		</div> --}}
 		<div class="container-login100">
 			<div class="p-t-50 p-b-90">
 				<form autocomplete="off" class="login100-form validate-form" method="POST" action="{{ route('login') }}">	

@@ -4,7 +4,7 @@
 	<div class="limiter">
 		<div class="fixed-top" style=" ">
 			<form action={{ __('login') }} style="padding: 2vw; right: 0; position: absolute;">
-				<button type="submit" class="btn btn-outline-success">
+				<button type="submit" class="btn btn-outline-dark">
 					<span class="lnr lnr-home" style="padding-right: 0.5vw;"></span> Login
 				</button>
 			</form>
@@ -68,8 +68,8 @@
 				</form>
 			</div>
 		</div>
-		<div class="fixed-bottom" style="padding-bottom: 7vw; padding-left: 6vw; z-index: -1;">
-				<img src="../../assets/img/morgiana.png" alt="aladin" width="600" height="460" style="opacity: 0.3; filter: alpha(opacity=50);">
+		<div class="fixed-bottom" style="padding-bottom: 9vw; padding-left: 6vw; z-index: -1;">
+				<img src="../../assets/img/morgiana.png" alt="aladin" width="600" height="430" style="opacity: 0.3; filter: alpha(opacity=50);">
 			</div>
 	</div>
 	
