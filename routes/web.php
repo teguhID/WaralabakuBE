@@ -33,3 +33,5 @@ for ($i=0; $i <= 48; $i++) {
 }
 
 Route::get('api/getData/detail/{id}', 'ApiController@detailData');
+Route::post('api/makeHistory', 'ApiController@makeHistory');
+Route::get('api/getHistory/{id}', 'ApiController@getHistory');

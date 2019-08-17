@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\NilaiUtilityModel;
 use App\DataWaralabaModel;
+use App\HistoryModel;
 
 class ApiController extends Controller
 {
@@ -197,5 +198,15 @@ class ApiController extends Controller
                                                                                                                                 ->where('datawaralaba.' . $bep, $bepStatement, $bepValue)
                                                                                                                                 ->where('datawaralaba.' . $keuntungan, $keuntunganStatement, $keuntunganValue)
                                                                                                                                 ->orderBy('hasil', 'desc')->get()));
+    }
+
+    public function makeHistory(Request $req)
+    {
+        HistoryModel::create($req->all());
+    }
+
+    public function getHistory($id)
+    {
+       return json_encode(array('data' =>HistoryModel::where('id', $id)->orderBy('created_at', 'desc')->get()));
     }
 }
