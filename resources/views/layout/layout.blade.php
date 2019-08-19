@@ -12,19 +12,19 @@
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <!-- Bootstrap core CSS     -->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('../assets/css/bootstrap.min.css') }}">
     <!-- Animation library for notifications   -->
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('../assets/css/animate.min.css') }}">
     <!--  Paper Dashboard core CSS    -->
-    <link rel="stylesheet" href="{{ asset('assets/css/paper-dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('../assets/css/paper-dashboard.css') }}">
     <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}">
+    <link rel="stylesheet" href="{{ asset('../assets/css/demo.css') }}">
     <!--  Fonts and icons     -->
-    <link rel="stylesheet" type="text/css" href={{ asset('assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}>
-    <link rel="stylesheet" type="text/css" href={{ asset('assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}>
+    <link rel="stylesheet" type="text/css" href={{ asset('../assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}>
+    <link rel="stylesheet" type="text/css" href={{ asset('../assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}>
     {{-- Data tables --}}
-    <link rel="stylesheet" href="{{ asset('assets/css/dataTables.bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/jquery.dataTables.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('../assets/css/dataTables.bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('../assets/css/jquery.dataTables.min.css') }}">
 
 </head>
 <body>
@@ -162,20 +162,20 @@
 </body>
 
     <!--   Core JS Files   -->
-    <script src={{ asset('assets/js/jquery.min.js') }} type="text/javascript"></script>
-	<script src={{ asset('assets/js/bootstrap.min.js') }} type="text/javascript"></script>
+    <script src={{ asset('../assets/js/jquery.min.js') }} type="text/javascript"></script>
+	<script src={{ asset('../assets/js/bootstrap.min.js') }} type="text/javascript"></script>
 
 	<!--  Checkbox, Radio & Switch Plugins -->
-    <script src={{ asset('assets/js/bootstrap-checkbox-radio.js') }}></script>
+    <script src={{ asset('../assets/js/bootstrap-checkbox-radio.js') }}></script>
     
     {{-- Data Tables --}}
-    <script src={{ asset('assets/js/jquery.dataTables.js') }}></script>
-    <script src={{ asset('assets/js/dataTables.bootstrap.js') }}></script>
+    <script src="{{ asset('') }}../assets/js/jquery.dataTables.min.js"></script>
+    <script src={{ asset('../assets/js/dataTables.bootstrap.min.js') }}></script>
 
     <!--  Notifications Plugin    -->
-    <script src={{ asset('assets/js/bootstrap-notify.js') }}></script>
+    <script src={{ asset('../assets/js/bootstrap-notify.js') }}></script>
 
-    <script src={{ asset('assets/js/paper-dashboard.js') }}></script>
+    <script src={{ asset('../assets/js/paper-dashboard.js') }}></script>
 
 	<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
     {{-- <script src={{  }}"assets/js/demo.js"></script>
