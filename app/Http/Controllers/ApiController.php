@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\NilaiUtilityModel;
 use App\DataWaralabaModel;
 use App\HistoryModel;
+use App\KuisionerModel;
 
 class ApiController extends Controller
 {
@@ -208,5 +209,11 @@ class ApiController extends Controller
     public function getHistory($id)
     {
        return json_encode(array('data' =>HistoryModel::where('id', $id)->orderBy('created_at', 'desc')->get()));
+    }
+
+    public function sendKuisioner(Request $req)
+    {
+        KuisionerModel::create($req->all());
+        return 'ok';
     }
 }
